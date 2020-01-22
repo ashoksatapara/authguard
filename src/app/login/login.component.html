@@ -1,0 +1,117 @@
+<header>
+          
+  <div class="row">
+      <div class="col-4"> 
+
+          <span >
+              <img src="../../../../assets/logo1.png" class="rounded-circle"  width="100" height="40" alt="Cinque Terre">
+            </span>
+           
+      </div>
+
+      <div class="col-8"> 
+
+          <span class="color:">
+             HR Management System
+            </span>
+           
+      </div>
+
+   
+    </div>
+
+
+</header>
+<nav>
+  <ul>
+      <li><a href="#">Home</a></li>
+     
+      <li><a href="#" (click) =  "loginAdmin()"> Admin Login </a></li>
+    
+  </ul>
+ 
+</nav>
+
+<div class="wrapper clearfix" >
+
+  <section >
+   <div class="container-fluid col-4" >
+  <p style="color: aliceblue;">ddddddddddddddddddd</p>
+  <p style="color: aliceblue;">ddddddddddddddddddd</p>
+  <p style="color: aliceblue;">ddddddddddddddddddd</p>
+  <p style="color: aliceblue;">ddddddddddddddddddd</p>
+ 
+
+    <div class="card mt-5" >
+   
+      <div class="card-header"><h2>Login</h2></div>
+      <div class="card-body">
+
+        <form [formGroup]="angForm"   novalidate>
+         
+
+          <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="center-block">Email:  </label>
+                      <input type= "email" class="form-control" formControlName="email"  [ngClass]="{ 'is-invalid': angForm.controls['email'].invalid }">
+                        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="invalid-feedback">
+                            <div  *ngIf="angForm.controls['email'].errors.required">
+                            Email is required.
+                          </div>
+                          <div *ngIf="angForm.controls['email'].errors.email">
+                            Email must be a valid email address.
+                          </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="row">
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label class="center-block">Password: </label>
+                    <input type= "password" class="form-control" formControlName="password" minlength="6" [ngClass]="{ 'is-invalid': angForm.controls['password'].invalid }"> 
+                 
+                
+                <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="invalid-feedback">
+                  <div *ngIf="angForm.controls['password'].errors.required">
+                      Password is required.
+                  </div>
+                  <div *ngIf="angForm.controls['password'].errors.minlength" >
+                    Minimum Length is 6.
+                  </div>
+                </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            
+
+              <div class="form-group">
+                <button type="submit"
+                [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary" (click)="onSubmit(angForm.value)">
+                Save<span class="badge badge-light"></span>
+              </button>
+              
+              </div>
+
+      </form>
+      <a href="registration" > New Registration </a>
+     
+      </div>
+      
+   </div>
+  
+  </div>
+</section>
+</div>
+  <footer>
+    <p>copyright &copy; archesoftronics.com</p>
+</footer>

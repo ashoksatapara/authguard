@@ -1,0 +1,13 @@
+<nav>
+   
+    <ul >
+        <li *ngFor="let item of list"> 
+         <a [routerLink]="[item.url]" > 
+            <span>{{item.name}}</span>
+         </a>
+        </li>
+       </ul>
+
+
+</nav>
+
